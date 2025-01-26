@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourney Manager</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+
+  <body>
+    <h1>Welcome to tourney manager</h1>
+
+    <form id="login" action="/submit" method="post">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Enter username..."
+        required
+      />
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter IRC password..."
+        required
+      />
+      <button type="submit">Submit Info</button>
+    </form>
+  </body>
+</html>

@@ -16,3 +16,13 @@ This version enables basic local chatting - however, no history is currently ava
 - Bancho messages logged everywhere
 - Connection to IRC
   ![](https://i.ibb.co/fY6K4q8/Code-Xgbzj-S4-WV4.png)
+
+## Version 0.5.0 Major - Beta
+
+- Fully functional login
+- Able to see #osu
+
+Demo :
+![](https://i.ibb.co/7jvHYnK/opera-dx8i-Ql-UKo9.gif)
+
+> Next major release will be full project
