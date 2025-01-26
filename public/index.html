@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourney Manager</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+
+  <body>
+    <h1>Welcome to tourney manager</h1>
+    <form id="message-form">
+      <input type="text" id="message" placeholder="Type a message" required />
+      <button type="submit">Send</button>
+    </form>
+    <ul id="messages"></ul>
+
+    <script>
+      const socket = io();
+      // message handle
+      document
+        .getElementById("message-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          const messageInput = document.getElementById("message");
+          const message = messageInput.value;
+          messageInput.value = "";
+
+          socket.emit("chat message", message);
+        });
+
+      //listen
+
+      socket.on("chat message", (msg) => {
+        const messagesList = document.getElementById("messages");
+        const li = document.createElement("li");
+        li.textContent = msg;
+        messagesList.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
