@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(http.createServer(app));
 
-app.use(express.static(public));
+app.use(express.static("public"));
 
 io.on("connection", (socket) => {
   console.log("new user connected");
