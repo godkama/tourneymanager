@@ -15,7 +15,8 @@ This version enables basic local chatting - however, no history is currently ava
 - Showing messages on browser window
 - Bancho messages logged everywhere
 - Connection to IRC
-  ![](https://i.ibb.co/fY6K4q8/Code-Xgbzj-S4-WV4.png)
+
+![](https://i.ibb.co/fY6K4q8/Code-Xgbzj-S4-WV4.png)
 
 ## Version 0.5.0 Major - Beta
 
@@ -23,6 +24,7 @@ This version enables basic local chatting - however, no history is currently ava
 - Able to see #osu
 
 Demo :
-![](https://i.ibb.co/7jvHYnK/opera-dx8i-Ql-UKo9.gif)
+
+![](https://i.ibb.co/RCZw6Hp/Code-Q2-C4-Ncyy-WM.gif)
 
 > Next major release will be full project
