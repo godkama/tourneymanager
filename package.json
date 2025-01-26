@@ -1,0 +1,28 @@
+{
+  "name": "tourneymanager",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Kqma",
+  "license": "MIT",
+  "description": "The bestest tool to help manage your osu! Tournament",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/godkama/tourneymanager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/godkama/tourneymanager/issues"
+  },
+  "homepage": "https://github.com/godkama/tourneymanager#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
