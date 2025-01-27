@@ -28,3 +28,15 @@ Demo :
 ![](https://i.ibb.co/RCZw6Hp/Code-Q2-C4-Ncyy-WM.gif)
 
 > Next major release will be full project
+
+## Version 1.0.0
+
+- Full UI Rebrand
+- IRC Client is now fully working
+  > Next version will include ability to switch channels (for now this is done through editing the code)
+- Now works for only 1 window, need to improve compatibility
+
+### Known Bugs
+
+- [Issue]() - The more windows you open, the more the message will appear and message be sent
+- [Issue]() - Opening on /submit just allows you to access main page without logging in and thus not being able to access cho@ppy.sh

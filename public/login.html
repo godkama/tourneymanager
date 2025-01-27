@@ -4,30 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tourney Manager</title>
-    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="css/login.css"
   </head>
 
   <body>
-    <h1>Welcome to tourney manager</h1>
-
     <form id="login" action="/submit" method="post">
-      <label for="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        placeholder="Enter username..."
-        required
-      />
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="Enter IRC password..."
-        required
-      />
-      <button type="submit">Submit Info</button>
+      <div class="inputs-container">
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter username..."
+          required
+          class="inp"
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter IRC password..."
+          required
+          class="inp"
+        />
+      </div>
+      <button type="submit" class="button-login">
+        <img
+          src="data:image/png;base64,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"
+        />
+      </button>
     </form>
   </body>
 </html>
