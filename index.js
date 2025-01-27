@@ -4,6 +4,7 @@ const { Server } = require("socket.io");
 const banchoJS = require("bancho.js");
 require("dotenv").config();
 const bodyParser = require("body-parser");
+const { cpSync } = require("fs");
 // init
 const app = express();
 const server = http.createServer(app);
@@ -11,6 +12,7 @@ const io = new Server(server);
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 // Serve the login page as the default page
 app.get("/", (req, res) => {
@@ -31,7 +33,6 @@ app.post("/submit", async (req, res) => {
     // Wait for the bot to connect
     await bot.connect();
     console.log("Connected to Bancho");
-
     // Bot is connected, set up the socket
     io.on("connection", (socket) => {
       console.log("new user connected");
@@ -52,8 +53,16 @@ app.post("/submit", async (req, res) => {
         io.emit("chat message", msg);
       });
 
+      //handling local chat messages here, allows to not repeat the display of message
+
+      socket.on("chat message l", (msg) => {
+        console.log("Local message");
+        channel.sendMessage(msg);
+      });
+
       socket.on("disconnect", () => {
         console.log("user disconnected");
+        bot.disconnect();
       });
     });
 

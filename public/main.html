@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main Page</title>
+    <link rel="stylesheet" href="css/main.css" />
     <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
+    <ul id="messages"></ul>
     <form id="message-form">
       <input
         type="text"
@@ -16,9 +18,7 @@
       />
       <button type="submit">Send</button>
     </form>
-    <ul id="messages"></ul>
 
     <script src="messages.js"></script>
-    </script>
   </body>
 </html>
