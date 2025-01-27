@@ -38,5 +38,5 @@ Demo :
 
 ### Known Bugs
 
-- [Issue]() - The more windows you open, the more the message will appear and message be sent
-- [Issue]() - Opening on /submit just allows you to access main page without logging in and thus not being able to access cho@ppy.sh
+- #4 - The more windows you open, the more the message will appear and message be sent
+- #2 - Opening on /submit just allows you to access main page without logging in and thus not being able to access cho@ppy.sh
