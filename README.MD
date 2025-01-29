@@ -40,3 +40,11 @@ Demo :
 
 - #4 - The more windows you open, the more the message will appear and message be sent
 - #2 - Opening on /submit just allows you to access main page without logging in and thus not being able to access cho@ppy.sh
+
+## Version 2.0.0
+
+- Implementing fixes for #2
+- Begin of implementation for #5
+  > As of now the cookies do save (i think)
+- Random code optimizations
+- Backend/frontend better reactivity
