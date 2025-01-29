@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tourney Manager</title>
-    <link rel="stylesheet" href="css/login.css"/>
+    <link rel="stylesheet" href="css/login.css" />
   </head>
 
   <body>
-    <form id="login" action="/submit" method="post">
+    <form id="login" method="post" action="/submit">
       <div class="inputs-container">
         <input
           type="text"
@@ -33,5 +33,22 @@
         />
       </button>
     </form>
+    <p id="errorMessage" style="color: red; display: none">
+      Invalid credentials. Please try again.
+    </p>
+    <script>
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const success = urlParams.get("success");
+        const token = urlParams.get("info");
+
+        if (success === "true" && myToken) {
+          window.localStorage.setItem("info", token); // Part I of implementing the cookies
+          window.location.href = "./main.html";
+        } else if (success === "false") {
+          document.getElementById("errorMessage").style.display = "block";
+        }
+      };
+    </script>
   </body>
 </html>
