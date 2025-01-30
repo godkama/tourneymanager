@@ -3,9 +3,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 const banchoJS = require("bancho.js");
 require("dotenv").config();
-const bodyParser = require("body-parser");
-const { cpSync } = require("fs");
-const { info } = require("console");
+
 // init
 const app = express();
 const server = http.createServer(app);
@@ -20,6 +18,22 @@ app.get("/submit", (req, res) => {
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/login.html");
+  // app.get("/verify", (req, res) => {
+  //   const { token } = req.body;
+
+  //   if (!token) {
+  //     return res.json({ valid: false });
+  //   }
+
+  //   if (token != null) {
+  //     return token;
+  //   }
+  // });
+  // if (localStorage.getItem("token") == null) {
+  //   res.sendFile(__dirname + "/public/login.html");
+  // } else {
+  //   res.sendFile(__dirname + "/public/main.html");
+  // }
 });
 
 app.post("/submit", async (req, res) => {

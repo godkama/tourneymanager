@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirect</title>
+  </head>
+  <body>
+    <script>
+      window.onload = async function () {
+        const token = window.localStorage.getItem("info");
+
+        if (!token) {
+          console.log("No token found. Redirecting to login...");
+          window.location.href = "/login.html";
+          return;
+        }
+
+        try {
+          const response = await fetch("/verify", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ token }),
+          });
+
+          const data = await response.json();
+
+          if (data.valid) {
+            console.log("Token valid. Redirecting to main page...");
+            window.location.href = "/main.html";
+          } else {
+            console.log("Invalid token. Redirecting to login...");
+            window.localStorage.removeItem("info");
+            window.location.href = "/login.html";
+          }
+        } catch (error) {
+          console.error("Error verifying token:", error);
+          window.location.href = "/login.html";
+        }
+      };
+    </script>
+  </body>
+</html>
